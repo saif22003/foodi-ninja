@@ -9,6 +9,7 @@ class Customer_Model(models.Model):
     customer_email = models.EmailField(max_length=254, unique=True)
     gender = models.CharField(max_length=10, choices=GenderChoice.choices, default= GenderChoice.MALE)
     date_of_birth = models.DateField(null=True, blank=True, validators=[DOBValidator()])
+    address = models.TextField()
     status = models.BooleanField(default=True)
     password = models.CharField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)

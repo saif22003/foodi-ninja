@@ -1,0 +1,5 @@
+<<<<< To create an __init__.py file inside the project_apps folder using Windows CMD, 
+run this command:  type nul > project_apps\__init__.py >>>>>>>>
+
+### Must Change in config.setting => in Installed_APPS [project_apps.AppName]
+### Change in food_items_app that import resturant app 

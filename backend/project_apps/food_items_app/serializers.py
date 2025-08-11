@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from resturant_app.models import Resturant_Model
+from project_apps.resturant_app.models import Resturant_Model
 from .models import Food_Items_Model
 
 class Food_Items_Model_Serializer(serializers.ModelSerializer):

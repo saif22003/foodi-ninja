@@ -1,5 +1,35 @@
-<<<<< To create an __init__.py file inside the project_apps folder using Windows CMD, 
-run this command:  type nul > project_apps\__init__.py >>>>>>>>
+# Development Notes for Project Structure Changes
 
-### Must Change in config.setting => in Installed_APPS [project_apps.AppName]
-### Change in food_items_app that import resturant app 
+1. Create __init__.py in project_apps folder
+To make project_apps a Python package, run the following command in Windows CMD:
+
+= > type nul > project_apps\__init__.py
+
+2. Update INSTALLED_APPS in config.settings
+Modify the INSTALLED_APPS list in config/settings.py to include apps with the new path prefix:
+
+=> INSTALLED_APPS = [
+    # other apps...
+    'project_apps.resturant_app',
+    'project_apps.food_items_app',
+    # add other apps here
+]
+
+3. Update apps.py in each app
+In every app’s apps.py file, change the name attribute to reflect the new folder structure.
+For example, in project_apps/resturant_app/apps.py:
+
+=> class ResturantAppConfig(AppConfig):
+    name = 'project_apps.resturant_app'
+
+4. Update imports in food_items_app
+Modify import statements in food_items_app to use the new path when importing from resturant_app:
+
+=> from project_apps.resturant_app.models import Resturant_Model
+
+Summary : 
+        All apps are now located inside the project_apps folder.
+
+        Make sure to update paths accordingly in settings, apps configuration, and imports.
+
+        This structure helps keep the project organized and scalable.

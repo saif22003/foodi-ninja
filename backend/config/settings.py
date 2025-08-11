@@ -23,6 +23,7 @@ DJANGO_APPS = [
 FOODI_APPS = [
     'customer_app',
     'resturant_app',
+    'food_items_app',
 ]
 
 THIRD_PARTY_APPS = [
